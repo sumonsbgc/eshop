@@ -1,0 +1,9 @@
+[02-Apr-2019 16:58:08 America/New_York] PHP Warning:  Uncaught ErrorException: require(/home/chanbwkk/eshop/vendor/composer/../../App/Helpers/AdminHelpers.php): failed to open stream: No such file or directory in /home/chanbwkk/eshop/vendor/composer/autoload_real.php:66
+Stack trace:
+#0 /home/chanbwkk/eshop/vendor/composer/autoload_real.php(66): Composer\Util\ErrorHandler::handle(2, 'require(/home/c...', '/home/chanbwkk/...', 66, Array)
+#1 /home/chanbwkk/eshop/vendor/composer/autoload_real.php(66): require()
+#2 /home/chanbwkk/eshop/vendor/composer/autoload_real.php(56): composerRequirefdf07274d2759ccf813c86a965fb78a3('8c9ca4b554d5a49...', '/home/chanbwkk/...')
+#3 /home/chanbwkk/eshop/vendor/autoload.php(7): ComposerAutoloaderInitfdf07274d2759ccf813c86a965fb78a3::getLoader()
+#4 /home/chanbwkk/eshop/vendor/laravel/framework/src/Illuminate/Foundation/ComposerScripts.php(43): require_once('/home/chanbwkk/...')
+#5 phar:///opt/cpanel/composer/bin/composer/src/Composer/EventDispatcher/EventDispatcher.php(292): Illuminate\Foundation\ComposerScripts::postAutoloadDump(Obje in /home/chanbwkk/eshop/vendor/composer/autoload_real.php on line 66
+[02-Apr-2019 16:58:08 America/New_York] PHP Fatal error:  composerRequirefdf07274d2759ccf813c86a965fb78a3(): Failed opening required '/home/chanbwkk/eshop/vendor/composer/../../App/Helpers/AdminHelpers.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/chanbwkk/eshop/vendor/composer/autoload_real.php on line 66
