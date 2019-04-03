@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col-lg-3 justify-content-center align-self-center text-left py-2">
                 <div class="site-logo">
-                    <img src="{{asset('FrontEndPageResource/image/Ecommerce-Logo-Vector.png')}}" class="img-fluid">
+                    <a href="{{ url('/') }}">
+                        <img src="{{asset('FrontEndPageResource/image/dadabangla.png')}}" class="img-fluid">
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center">

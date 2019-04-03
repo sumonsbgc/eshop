@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="ibox-content">
-                        <form action="{{ route('posts.update', $post->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('pages.update', $post->id) }}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
                             <div class="row">
@@ -80,15 +80,13 @@
                                         @endforeach
                                     </select>
                                 </div> --}}
-                                <div class="col-sm-6 form-group">
+                                {{-- <div class="col-sm-6 form-group">
                                     <label for="post_category">Parent Post</label>
-                                    <select class="form-control" name="post_category" style="width: 100%;">
-                                        @foreach($category as $cate)
-                                        <option value="{{old('post_category', $cate->name)}}">{{$cate->name}}</option>
-                                        @endforeach
+                                    <select class="form-control" name="parent_post" style="width: 100%;">
+                                        <option value="{{old('parent_post')}}">{{'Parent Post'}}</option>
                                     </select>
-                                </div>
-                                
+                                </div> --}}
+
                                 <div class="col-sm-6 form-group">
                                     <label for="post_category">Post Status</label>
                                     <select class="form-control" name="post_status" style="width: 100%;">

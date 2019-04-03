@@ -48,7 +48,6 @@ class PageController extends Controller
                 'sub_title' => 'unique:posts|nullable',
                 'content' => 'nullable',
                 'post_thumbnail' => 'nullable|image|mimes:jpeg,jpg,png,bmp,gif',
-                'post_category' => 'required',
                 'parent_post' => 'nullable',
                 'post_status'  => 'required',
             ];
@@ -83,7 +82,6 @@ class PageController extends Controller
             $post->post_name = strtolower(str_replace(' ', '-',  $request->title));
             $post->post_type = isset($request->post_type) ? $request->post_type : '';
             $post->parent_post = isset($request->parent_post) ? $request->parent_post : '';
-            $post->post_category = isset($request->post_category) ? $request->post_category : '';
             $post->save();
             
             return back()->with(['status' => 'Post Created Successfully']);
@@ -131,7 +129,6 @@ class PageController extends Controller
                 'sub_title' => 'nullable',
                 'content' => 'nullable',
                 'post_thumbnail' => 'nullable|image|mimes:jpeg,jpg,png,bmp,gif',
-                'post_category' => 'required',
                 'parent_post' => 'nullable',
                 'post_status'  => 'required',
             ];        
@@ -173,7 +170,6 @@ class PageController extends Controller
             $post->post_name = strtolower(str_replace(' ', '-',  $request->title));
             $post->post_type = isset($request->post_type) ? $request->post_type : '';
             $post->parent_post = isset($request->parent_post) ? $request->parent_post : '';
-            $post->post_category = isset($request->post_category) ? $request->post_category : '';
 
             $post->save();
             return back()->with(['status' => 'Post Updated Successfully']);

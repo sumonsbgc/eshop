@@ -17,7 +17,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-//        $mainCat = Category::where('categories.parent_status', '=', '0')->get();
+        $mainCat = Category::where('categories.parent_status', '=', '0')->where('post_type','product')->get();
 //
 //        $subs = Category::where('categories.parent_status','>',0)->get();
 //
@@ -51,7 +51,7 @@ class IndexController extends Controller
 //        return view('frontEnd/index',
 //            compact('mainCat','subs','allProducts','featured_items','allSlider','flash_product','Brands','hero_banner','mid_banner','brands_items'));
 
-        return view('FrontEndPage.index');
+        return view('FrontEndPage.index', compact('mainCat'));
     }
 
 

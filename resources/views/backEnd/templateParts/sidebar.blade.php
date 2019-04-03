@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    Data Bangla
+                    Dada Bangla
                 </div>
             </li>
 
@@ -37,7 +37,7 @@
                 <ul class="nav nav-second-level collapse">
                     <li><a href="{{ route('posts.create') }}"><i class="fa fa-diamond"></i> <span class="nav-label"> Add New Post</span></a></li>
                     <li><a href="{{ route('posts.index') }}"><i class="fa fa-diamond"></i> <span class="nav-label"> All Posts</span></a></li>
-                    <li><a href="{{ url('#') }}"><i class="fa fa-diamond"></i> <span class="nav-label">Comments</span></a></li>
+                    <li><a href="{{ route('posts.comments') }}"><i class="fa fa-diamond"></i> <span class="nav-label">Comments</span></a></li>
                 </ul>
             </li>
 

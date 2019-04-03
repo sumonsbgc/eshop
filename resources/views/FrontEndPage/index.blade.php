@@ -73,7 +73,7 @@
             <div class="col-lg-12">
                 <div class="row syn-row justify-content-center">
                     <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center">
+                        <div class="product-cart text-center hot-items-product">
                             <a href="{{url('/single')}}">
                                 <div class="product-image">
                                     <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center">
+                        <div class="product-cart text-center hot-items-product">
                             <a href="{{url('/single')}}">
                                 <div class="product-image">
                                     <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center">
+                        <div class="product-cart text-center hot-items-product">
                             <a href="{{url('/single')}}">
                                 <div class="product-image">
                                     <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center">
+                        <div class="product-cart text-center hot-items-product">
                             <a href="{{url('/single')}}">
                                 <div class="product-image">
                                     <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center">
+                        <div class="product-cart text-center hot-items-product">
                             <a href="{{url('/single')}}">
                                 <div class="product-image">
                                     <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
@@ -196,681 +196,108 @@
     </div>
 </div>
 
-<div class="category-product py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="category-border-top bg-border-1"></div>
-            </div>
-        </div>
-        <div class="row syn-row">
-            <div class="col-lg-3 px-0 sub-cat-list">
-                <div class="cat-name text-center my-2">
-                    <h3>Mobile</h3>
-                </div>
-                <div class="sub-cat bg-cat-1">
-                    <ul>
-                        <li><a href="{{url('category')}}">Smart Phone</a></li>
-                        <li><a href="{{url('category')}}">Feature Phone</a></li>
-                        <li><a href="{{url('category')}}">Mobile Accessories</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 px-0">
-                <div class="row syn-row">
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
 
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
+@php
 
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
+    $c = 1;
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
+@endphp
+@foreach($mainCat as $cat)
 
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
+    @php
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
+        $c ++;
 
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
+    @endphp
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
+    <div class="category-product py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="category-border-top bg-border-{{$c}}"></div>
                 </div>
             </div>
-            <div class="col-lg-3 px-0 cat-image">
-                <img src="{{asset('FrontEndPageResource/image/y6-pro-category-bannerddd.jpg')}}" class="img-fluid">
+            <div class="row syn-row">
+                <div class="col-lg-3 px-0 sub-cat-list">
+                    <div class="cat-name text-center my-2">
+                        <h3>{{$cat->name}}</h3>
+                    </div>
+                    <div class="sub-cat bg-cat-{{$c}}">
+                        @php
+
+                            $sub_cats = get_sub_cat($cat->id);
+
+                        @endphp
+
+                        @foreach($sub_cats as $sub_cat)
+
+                        <ul>
+                            <li><a href="{{url('category')}}">{{$sub_cat->name}}</a></li>
+                        </ul>
+                            @endforeach
+                    </div>
+                </div>
+                <div class="col-lg-6 px-0 border-bottom">
+                    <div class="row syn-row">
+
+                        @php
+
+                            $sub_Cat_first= isset($sub_cats[0]->id) ? $sub_cats[0]->id : null;
+
+                        @endphp
+
+                        @if(get_products($sub_Cat_first,6) == null)
+                            <div class="col-lg-12 d-flex justify-content-center align-items-center empty-products-list">
+                                <h6>{{isset($sub_cats[0]->name) ? $sub_cats[0]->name : null}} Does not have any products</h6>
+                            </div>
+
+                        @else
+                            @php
+                                $cat_products = get_products($sub_Cat_first,6);
+                            @endphp
+
+                            @foreach($cat_products as $Cat_product)
+                                <div class="col-lg-4 px-0 cat-item">
+                                    <div class="product-cart text-center">
+                                        <a href="{{url('/single')}}">
+                                            <div class="product-image">
+
+                                                @php
+                                                    $images = explode('|',$Cat_product->product_images);
+                                                @endphp
+
+                                                <img src="{{asset('storage/upload/product_image/'.$images[0])}}" class="img-fluid" alt="image">
+                                            </div>
+                                        </a>
+                                        <div class="ratting">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fa fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-info text-center">
+
+                                            <a href="{{url('/single')}}"><h4 class="product-name">{{$Cat_product->product_name}}</h4></a>
+                                            <span class="product-price"><i class="icofont-taka"></i> {{$Cat_product->product_price}}</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="col-lg-3 px-0 cat-image">
+                    <img src="{{asset('FrontEndPageResource/image/y6-pro-category-bannerddd.jpg')}}" class="img-fluid">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="category-product py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="category-border-top bg-border-2"></div>
-            </div>
-        </div>
-        <div class="row syn-row">
-            <div class="col-lg-3 px-0 sub-cat-list">
-                <div class="cat-name text-center my-2">
-                    <h3>Mobile</h3>
-                </div>
-                <div class="sub-cat bg-cat-2">
-                    <ul>
-                        <li><a href="{{url('category')}}">Smart Phone</a></li>
-                        <li><a href="{{url('category')}}">Feature Phone</a></li>
-                        <li><a href="{{url('category')}}">Mobile Accessories</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 px-0">
-                <div class="row syn-row">
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 px-0 cat-image">
-                <img src="{{asset('FrontEndPageResource/image/y6-pro-category-bannerddd.jpg')}}" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="category-product py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="category-border-top bg-border-3"></div>
-            </div>
-        </div>
-        <div class="row syn-row">
-            <div class="col-lg-3 px-0 sub-cat-list">
-                <div class="cat-name text-center my-2">
-                    <h3>Mobile</h3>
-                </div>
-                <div class="sub-cat bg-cat-3">
-                    <ul>
-                        <li><a href="{{url('category')}}">Smart Phone</a></li>
-                        <li><a href="{{url('category')}}">Feature Phone</a></li>
-                        <li><a href="{{url('category')}}">Mobile Accessories</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 px-0">
-                <div class="row syn-row">
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 px-0 cat-image">
-                <img src="{{asset('FrontEndPageResource/image/y6-pro-category-bannerddd.jpg')}}" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="category-product py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="category-border-top"></div>
-            </div>
-        </div>
-        <div class="row syn-row">
-            <div class="col-lg-3 px-0 sub-cat-list">
-                <div class="cat-name text-center my-2">
-                    <h3>Mobile</h3>
-                </div>
-                <div class="sub-cat">
-                    <ul>
-                        <li><a href="">Smart Phone</a></li>
-                        <li><a href="">Feature Phone</a></li>
-                        <li><a href="">Mobile Accessories</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 px-0">
-                <div class="row syn-row">
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 px-0 cat-item">
-                        <div class="product-cart text-center">
-                            <a href="">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href=""><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 px-0 cat-image">
-                <img src="{{asset('FrontEndPageResource/image/y6-pro-category-bannerddd.jpg')}}" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
+    @endforeach
 
 
 <div class="footer-banner py-5">

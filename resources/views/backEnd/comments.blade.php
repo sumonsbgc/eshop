@@ -51,7 +51,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        @php
+                                                        {{-- @php
                                                             $id =0;
                                                         @endphp
                         
@@ -77,7 +77,7 @@
                                                                     </form>
                                                                 </td>
                                                             </tr>
-                                                        @endforeach
+                                                        @endforeach --}}
                                                         </tbody>
                                                         <tfoot>
                                                         <tr>
@@ -106,7 +106,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        @php
+                                                        {{-- @php
                                                             $id =0;
                                                         @endphp
                                                         
@@ -132,7 +132,7 @@
                                                                     </form>
                                                                 </td>
                                                             </tr>
-                                                        @endforeach
+                                                        @endforeach --}}
                                                         </tbody>
                                                         <tfoot>
                                                         <tr>

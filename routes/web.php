@@ -50,31 +50,26 @@ Route::post('admin/login','Auth\AdminLogin@login')->name('acceptedAdmin');
 Route::group(['prefix'=>'admin', 'middleware'=>['auth:admin']],function (){
 
     Route::post('logout/','Auth\AdminLogin@logout')->name('AdminLogout');
-
     Route::get('/','AdminController@index')->name('adminIndex');
-
     Route::resource('/posts', 'PostController');
+
+    Route::get('/comments', function(){
+        return view('backEnd.comments');
+    })->name('posts.comments');
+
     Route::resource('/pages', 'PageController');
     Route::resource('/categories', 'CategoryController');
     Route::resource('/brands','BrandController');
     Route::resource('/product','ProductController');
 
     Route::post('/chaining_product/{id}','ProductController@changingProductCat');
-
     Route::post('/chaining_brand/{id}','ProductController@changingProductBrands');
-
     Route::resource('/featuredItems','FeaturedItemsController');
-
     Route::resource('/bestDeals','BestDealController');
-
     Route::post('/bestDeals/store','BestDealController@store');
-
     Route::resource('/SliderItem','SliderController');
-
     Route::resource('/PageBanner','PageAdvertisementController');
-
     Route::post('/inserting_slider/{id}','SliderController@Inserting_slider');
-
     Route::get('/single_product/{id}','ProductController@singleProduct')->name('singleProduct');
 
 });
