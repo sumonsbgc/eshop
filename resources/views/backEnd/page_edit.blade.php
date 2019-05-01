@@ -51,7 +51,10 @@
                                     <label for="title">Post Title</label>
                                     <input type="text" class="form-control" name="title" id="title" value="{{old('title', $post->title)}}">
                                 </div>
-
+                                <div class="col-lg-12 form-group">
+                                    <label for="bn_post_name">Post Title In Bangla</label>
+                                    <input type="text" class="form-control" name="bn_post_name" id="bn_post_name" value="{{old('bn_post_name', $post->bn_post_name)}}">
+                                </div>
                                 <div class="col-lg-12 form-group">
                                     <label for="sub_title">Sub Title</label>
                                     <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{old('sub_title', $post->sub_title)}}">
@@ -106,4 +109,9 @@
             </div>
         </div>
     </div>
+ 
+
 @endsection
+
+
+

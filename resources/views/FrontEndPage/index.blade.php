@@ -1,10 +1,6 @@
 @extends('FrontEndPage.templateParts.master')
-
 @section('title','Ecommerce')
-
-
 @section('content')
-
 <div class="hero-section">
     <div class="container">
         <div class="row">
@@ -12,57 +8,42 @@
                 <div class="owl-demo">
                     <div class="slide-progress"></div>
                     <div class="owl-carousel owl-theme">
+
+                        @foreach($allSlider as $slider)
                         <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/1553153028_0_AC-Sale-Big-Banner-updated.jpg')}}" class="img-fluid" alt="slide"></a>
+                            <a href=""><img src="{{asset('storage/upload/slider_image/'.$slider->image)}}" class="img-fluid" alt="slide"></a>
                         </div>
-                        <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/samsung.jpg')}}" class="img-fluid" alt="slide"></a>
-                        </div>
-                        <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/headphone.jpg')}}" class="img-fluid" alt="slide"></a>
-                        </div>
-                        <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/vivo.jpg')}}" class="img-fluid" alt="slide"></a>
-                        </div>
-                        <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/purid.png')}}" class="img-fluid" alt="slide"></a>
-                        </div>
-                        <div class="item">
-                            <a href=""><img src="{{asset('FrontEndPageResource/image/hoco.jpg')}}" class="img-fluid" alt="slide"></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="slider-item-list">
                     <ul id='carousel-custom-dots' class='owl-dots menu-list'>
-                        <li class='owl-dot'>AC </li>
-                        <li class='owl-dot'>Samsung</li>
-                        <li class='owl-dot'>Headphone</li>
-                        <li class='owl-dot'>vivo</li>
-                        <li class='owl-dot'>Puried</li>
-                        <li class='owl-dot'>Hoco</li>
+                        @foreach($allSlider as $slider)
+                        <li class='owl-dot'>{{$slider->slider_target}}</li>
+                            @endforeach
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="header-banner py-3">
+<div class="header-banner py-sm-4 py-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="banner py-3">
+            <div class="col-lg-6 py-sm-0 pt-3">
+                <div class="banner">
                     <img src="{{asset('FrontEndPageResource/image/banner-14.jpg')}}" class="img-fluid">
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="banner py-3">
+            <div class="col-lg-6 py-sm-0 pt-3">
+                <div class="banner">
                     <img src="{{asset('FrontEndPageResource/image/banner-15.jpg')}}" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="hot-deals">
+<div class="hot-deals py-sm-0 pt-3">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -72,11 +53,15 @@
             </div>
             <div class="col-lg-12">
                 <div class="row syn-row justify-content-center">
-                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
+                    @foreach($flash_products as $product)
+                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item col-6">
                         <div class="product-cart text-center hot-items-product">
-                            <a href="{{url('/single')}}">
+                            <a href="{{route('singleProductView',$product->id)}}">
                                 <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
+                                    @php
+                                        $images = explode('|',$product->product_images);
+                                    @endphp
+                                    <img src="{{asset('storage/upload/product_image/'.$images[0])}}" class="img-fluid" alt="image">
                                 </div>
                             </a>
                             <div class="ratting">
@@ -88,105 +73,35 @@
                             </div>
                             <div class="product-info text-center">
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
+                                <a href="{{route('singleProductView',$product->id)}}"><h4 class="product-name">{{$product->product_name}}</h4></a>
+
+                                @if($product->product_discount != null)
+
+                                    <span class="hot-deals-old-price"><del><i class="icofont-taka"></i> {{$product->product_price}}</del></span>
+
+                                    @php
+                                        $product_price = round(($product->product_price * $product->product_discount) / 100);
+                                    @endphp
+                                    <span class="product-price hot-deals-new-price"><i class="icofont-taka"></i> {{$product_price}}</span>
+
+
+                                @elseif($product->product_special_price != null)
+
+                                    <span class="hot-deals-old-price"><del><i class="icofont-taka"></i> {{$product->product_price}}</del></span>
+                                    <span class="product-price hot-deals-new-price"><i class="icofont-taka"></i> {{$product->product_special_price}}</span>
+
+                                @else
+
+                                    <span class="product-price"><i class="icofont-taka"></i> {{$product->product_price}}</span>
+
+                                @endif
 
                             </div>
-                            <button type="button" class="product-btn">Buy Now</button>
+                            <a role="button" class="product-btn" href="{{ route('singleProductView',$product->id) }}">Buy Now</a>
                         </div>
                     </div>
-                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center hot-items-product">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
 
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center hot-items-product">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center hot-items-product">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="col-md-15 col-sm-15 col-sm-4 px-0 hot-item">
-                        <div class="product-cart text-center hot-items-product">
-                            <a href="{{url('/single')}}">
-                                <div class="product-image">
-                                    <img src="{{asset('FrontEndPageResource/image/products/product-1.png')}}">
-                                </div>
-                            </a>
-                            <div class="ratting">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fa fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="product-info text-center">
-
-                                <a href="{{url('/single')}}"><h4 class="product-name">HP Laptop GH</h4></a>
-                                <span class="product-price"><i class="icofont-taka"></i> 78000</span>
-
-                            </div>
-                            <button type="button" class="product-btn">Buy Now</button>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-12">
@@ -205,14 +120,11 @@
 
 @endphp
 @foreach($mainCat as $cat)
-
     @php
-
         $c ++;
-
     @endphp
 
-    <div class="category-product py-5">
+    <div class="category-product py-sm-5 pt-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -226,17 +138,13 @@
                     </div>
                     <div class="sub-cat bg-cat-{{$c}}">
                         @php
-
                             $sub_cats = get_sub_cat($cat->id);
-
                         @endphp
-
                         @foreach($sub_cats as $sub_cat)
-
                         <ul>
-                            <li><a href="{{url('category')}}">{{$sub_cat->name}}</a></li>
+                            <li><a href="{{url('category', $sub_cat->name)}}">{{$sub_cat->name}}</a></li>
                         </ul>
-                            @endforeach
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-6 px-0 border-bottom">
@@ -249,9 +157,50 @@
                         @endphp
 
                         @if(get_products($sub_Cat_first,6) == null)
+
+                            @if(get_products($cat->id,6) == null)
+
                             <div class="col-lg-12 d-flex justify-content-center align-items-center empty-products-list">
                                 <h6>{{isset($sub_cats[0]->name) ? $sub_cats[0]->name : null}} Does not have any products</h6>
                             </div>
+
+                                @else
+                                
+                                @php
+                                    $cat_products = get_products($cat->id,6);
+                                @endphp
+
+                                @foreach($cat_products as $Cat_product)
+                                    <div class="col-lg-4 px-0 cat-item col-6">
+                                        <div class="product-cart text-center">
+                                            <a href="{{route('singleProductView',$Cat_product->id)}}">
+                                                <div class="product-image">
+
+                                                    @php
+                                                        $images = explode('|',$Cat_product->product_images);
+                                                    @endphp
+
+                                                    <img src="{{asset('storage/upload/product_image/'.$images[0])}}" class="img-fluid" alt="image">
+                                                </div>
+                                            </a>
+                                            <div class="ratting">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fa fa-star-half-alt"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <div class="product-info text-center">
+
+                                                <a href="{{route('singleProductView',$Cat_product->id)}}"><h4 class="product-name">{{$Cat_product->product_name}}</h4></a>
+                                                <span class="product-price"><i class="icofont-taka"></i> {{$Cat_product->product_price}}</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                                @endif
 
                         @else
                             @php
@@ -259,9 +208,9 @@
                             @endphp
 
                             @foreach($cat_products as $Cat_product)
-                                <div class="col-lg-4 px-0 cat-item">
+                                <div class="col-lg-4 px-0 cat-item col-6">
                                     <div class="product-cart text-center">
-                                        <a href="{{url('/single')}}">
+                                        <a href="{{route('singleProductView',$Cat_product->id)}}">
                                             <div class="product-image">
 
                                                 @php
@@ -280,7 +229,7 @@
                                         </div>
                                         <div class="product-info text-center">
 
-                                            <a href="{{url('/single')}}"><h4 class="product-name">{{$Cat_product->product_name}}</h4></a>
+                                            <a href="{{route('singleProductView',$Cat_product->id)}}"><h4 class="product-name">{{$Cat_product->product_name}}</h4></a>
                                             <span class="product-price"><i class="icofont-taka"></i> {{$Cat_product->product_price}}</span>
 
                                         </div>
@@ -296,11 +245,9 @@
             </div>
         </div>
     </div>
-
     @endforeach
 
-
-<div class="footer-banner py-5">
+<div class="footer-banner py-sm-5 pt-3 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

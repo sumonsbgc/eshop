@@ -140,7 +140,7 @@
 
                                     <label>Select Category</label>
 
-                                    <select class="form-control" name="product_category" id="product_parent" onchange="goToSub(this.value)">
+                                    <select class="form-control" name="product_category" id="product_parent" onclick="goToSub(this.value)">
 
                                         @foreach($categories as $category)
 
@@ -156,7 +156,7 @@
 
                                     <label>Select Sub-Category</label>
 
-                                    <select class="form-control" name="product_category" id="subCategory" onchange="goToBrands(this.value)">
+                                    <select class="form-control" name="product_category" id="subCategory" onclick="goToBrands(this.value)">
 
                                         @foreach($subCategories as $sub_cat)
 
@@ -256,10 +256,16 @@
 
                                     <label>Product Description </label>
 
-                                    <textarea type="text" name="product_description" class="form-control" style="width: 100%; height: 200px"></textarea>
+                                    <textarea type="text" name="product_description" id="summernote" class="form-control" style="width: 100%; height: 200px"></textarea>
 
                                 </div>
+                                <div class="col-lg-12 form-group control-label">
 
+                                    <label>Product Specification </label>
+
+                                    <textarea type="text" name="product_specification" id="summernote1" class="form-control" style="width: 100%; height: 200px"></textarea>
+
+                                </div>
 
 
                                 <div class="col-lg-12">
@@ -274,7 +280,7 @@
 
                                                     <label>Product Color</label>
 
-                                                    <input type="text" name="product_color" class="form-control inline colorpicker-full" id="colorpicker-full1" value="fe9810" style="width: 90%">
+                                                    <input type="text" name="product_color" class="form-control inline colorpicker-full" id="colorpicker-full1" style="width: 90%">
 
                                                     <div class="input-group-append">
 

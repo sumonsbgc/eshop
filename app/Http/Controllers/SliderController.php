@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Slider;
+use App\Slider_image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Product;
@@ -17,9 +18,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $allData = Slider::all();
+        $allData = Slider_image::orderBy('id','desc')->get();
 
-        return view('backEnd.showSliderOptions',compact('allData'));
+        return view('backEnd.create_slider',compact('allData'));
 
     }
 
@@ -30,16 +31,41 @@ class SliderController extends Controller
      */
     public function create()
     {
-        $allData = Slider::all();
+//        $allData = Slider::all();
+//
+//        $all = DB::table('products')
+//            ->join('categories','products.product_category','=','categories.id')
+//            ->join('brands','products.product_brand','=','brands.id')
+//            ->select('products.*','categories.name AS cat_name','brands.name AS brand_name')
+//            ->where('products.product_special_price','!=','null')->get();
+//
+//        return view('backEnd.Sliders',compact('allData', 'all'));
 
-        $all = DB::table('products')
-            ->join('categories','products.product_category','=','categories.id')
-            ->join('brands','products.product_brand','=','brands.id')
-            ->select('products.*','categories.name AS cat_name','brands.name AS brand_name')
-            ->where('products.product_special_price','!=','null')->get();
+        return redirect('admin/SliderItem');
 
-        return view('backEnd.Sliders',compact('allData', 'all'));
 
+    }
+
+    public function storeSlider(Request $request){
+
+        $request->validate([
+            'slider_target' => ['required'],
+            'image1'=>['mimes:jpeg,png,jpg']
+        ]);
+
+        $image = $request->file('image1');
+
+        $image_name = time().'_'.$image->getClientOriginalName();
+        $path = $image->storeAs('upload/slider_image',$image_name);
+
+        $request['image'] = $image_name;
+
+        $all=$request->except('image1');
+
+
+        Slider_image::create($all);
+
+        return redirect('admin/SliderItem');
 
     }
 
@@ -107,31 +133,29 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $single=Slider::findorfail($id);
+        $single=Slider_image::findorfail($id);
         $image = $single->image;
 
         if ($request->file() != null){
 
-            Storage::delete('upload/slider/'.$image);
+            Storage::delete('upload/slider_image/'.$image);
 
-            $upload = $request->file('image');
+            $upload = $request->file('image1');
 
 
-            $file_name = 'slider_image_'.time().'.'.$upload->getClientOriginalExtension();
+            $file_name = time().'_'.$upload->getClientOriginalExtension();
 
-            $path = $upload->storeAs('upload/slider',$file_name);
+            $path = $upload->storeAs('upload/slider_image',$file_name);
 
             $single->update([
-                'caption'=>$request->caption,
-                'discount'=>$request->discount,
-                'image'=>$file_name
+                'image'=>$file_name,
+                'slider_target'=>$request->slider_target
             ]);
         }else{
 
             $single->update([
-                'caption'=>$request->caption,
-                'discount'=>$request->discount,
-                'image'=>$request->img_name
+                'image'=>$request->img,
+                'slider_target'=>$request->slider_target
             ]);
         }
 
@@ -147,7 +171,7 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        Slider::findorfail($id)->delete();
+        Slider_image::findorfail($id)->delete();
 
         return redirect('admin/SliderItem');
     }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Order;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -19,7 +21,12 @@ class UserController extends Controller
 
         $user = User::where('users.id','=',Auth::user()->id)->first();
 
-        return view('FrontEndPage.my_account',compact('user'));
+        $success_orders = Order::where('user_id',Auth::user()->id)->where('status','1')->orderBy('receipt_no','desc')->get()->unique('receipt_no');
+
+        $pending_orders = Order::where('user_id',Auth::user()->id)->where('status','0')->orderBy('receipt_no','desc')->get()->unique('receipt_no');
+
+
+        return view('FrontEndPage.my_account',compact('user','pending_orders','success_orders'));
 
     }
 

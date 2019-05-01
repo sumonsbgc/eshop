@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('parent_status')->default(0);
             $table->string('child_status')->default(0);
             $table->string('name');
+            $table->string('bn_cat_name')->nullable();
+            $table->string('slug')->nullable();
             $table->string('post_type');
             $table->string('status')->default(0);
             $table->timestamps();

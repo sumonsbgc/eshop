@@ -8,6 +8,7 @@ use Validator;
 use App\Category;
 use App\Post;
 use Auth;
+use View;
 
 class PageController extends Controller
 {
@@ -79,7 +80,7 @@ class PageController extends Controller
             $post->post_thumbnail = isset($thumbnail) ? $thumbnail : '';
             $post->author_id = Auth::user()->id;
             $post->post_status = isset($request->post_status) ? $request->post_status : '';
-            $post->post_name = strtolower(str_replace(' ', '-',  $request->title));
+            $post->post_name = strtolower(str_replace(' ', '-',  str_replace(['& ', 'and ', 'And '], [''], $request->title)));
             $post->post_type = isset($request->post_type) ? $request->post_type : '';
             $post->parent_post = isset($request->parent_post) ? $request->parent_post : '';
             $post->save();
@@ -96,9 +97,16 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $page = \App\Post::where(['post_name' => $slug, 'post_type' => 'page'])->first();
+        return View::first(["FrontEndPage/{$page->post_name}", "page"], compact('page'));
+
+        // $view = "pages/{$page->post_name}";
+        // if(!view()->exists($view)){
+        //     $view = 'page';
+        // }    
+        // return view($view, compact('page'));
     }
 
     /**
@@ -142,7 +150,7 @@ class PageController extends Controller
                 if(in_array(strtolower($file->getClientOriginalExtension()), ['jpg', 'jpeg', 'png', 'bmp', 'gif'])){
                     if($file->getClientSize() < 2000000 ){
                         $prevThumb = Post::find($id)->post_thumbnail;
-
+                        
                         if(isset($prevThumb) && $prevThumb !== ""){
                             // @unlink(public_path("storage/upload/posts/".$prevThumb));
                             \File::delete("storage/upload/posts/".$prevThumb);
@@ -167,7 +175,7 @@ class PageController extends Controller
             $post->post_thumbnail = isset($thumbnail) ? $thumbnail : '';
             $post->author_id = Auth::user()->id;
             $post->post_status = isset($request->post_status) ? $request->post_status : '';
-            $post->post_name = strtolower(str_replace(' ', '-',  $request->title));
+            $post->post_name = strtolower(str_replace(' ', '-',  str_replace(['& ', 'and ', 'And '], [''], $request->title)));
             $post->post_type = isset($request->post_type) ? $request->post_type : '';
             $post->parent_post = isset($request->parent_post) ? $request->parent_post : '';
 

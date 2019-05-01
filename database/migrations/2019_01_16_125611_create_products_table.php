@@ -22,10 +22,12 @@ class CreateProductsTable extends Migration
             $table->string('product_model_no');
             $table->string('product_code');
             $table->string('product_color');
+            $table->string('product_retail_price');
             $table->string('product_price');
             $table->string('product_special_price')->nullable();
             $table->string('product_size')->nullable();
             $table->text('product_description');
+            $table->text('product_specification')->nullable();
             $table->string('product_images');
             $table->integer('product_status')->default(0);
             $table->timestamps();

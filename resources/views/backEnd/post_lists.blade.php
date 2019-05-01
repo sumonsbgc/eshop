@@ -110,20 +110,20 @@
                                                     $id =0;
                                                 @endphp
                                                 
-                                                @foreach($posts as $post)
+                                                @foreach(getAllTrashPosts() as $trash)
                                                     @php
                                                         $id++;
                                                     @endphp
                                                     <tr>
                                                         <td>{{$id}}</td>
-                                                        <td>{{$post->title.' Trash'}}</td>
-                                                        <td>{{ucwords(str_replace('_', ' ', $post->post_category.' Trash'))}}</td>
-                                                        <td>{{ App\Admin::find($post->author_id)->username.' Trash' }}</td>
+                                                        <td>{{$trash->title.' Trash'}}</td>
+                                                        <td>{{ucwords(str_replace('_', ' ', $trash->post_category.' Trash'))}}</td>
+                                                        <td>{{ App\Admin::find($trash->author_id)->username.' Trash' }}</td>
                                                         <td>
-                                                            <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-primary btn-circle">
+                                                            <a href="{{ route('posts.edit',$trash->id) }}" class="btn btn-primary btn-circle">
                                                                 <i class="fa fa-list"></i>
                                                             </a>
-                                                            <form class="form-inline inline" method="post" action="{{route('posts.destroy',$post->id)}}">
+                                                            <form class="form-inline inline" method="post" action="{{route('posts.destroy',$trash->id)}}">
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button class="btn btn-warning btn-circle" type="submit">

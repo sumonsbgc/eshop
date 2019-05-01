@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
 use App\Category;
 use App\Brand;
 use Illuminate\Support\Facades\DB;
@@ -14,12 +15,21 @@ class ProductViewController extends Controller
 
         $product = DB::table('products')
             ->join('categories','products.product_category','=','categories.id')
-            ->join('brands','products.product_brand','=','brands.id')
+            ->leftjoin('brands','products.product_brand','=','brands.id')
             ->where('products.id','=',$id)
             ->select('products.*','categories.name AS cat_name','brands.name AS brand_name')->first();
+        
+        set_sql_mode('');
+        $best_sellers = DB::table('orders')
+            ->select('product_id',DB::raw('count(product_id) as counting'))
+            ->where('status','=','1')
+            ->groupBy('product_id')
+            ->get()
+            ->sortByDesc('counting')
+            ->take(5);
 
-        return view('frontEnd.singleProduct',compact('product'));
 
+        return view('FrontEndPage.single',compact('product', 'best_sellers'));
     }
 
 

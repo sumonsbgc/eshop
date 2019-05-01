@@ -23,7 +23,10 @@ class BestDealController extends Controller
                 ->join('products','best_deals.product_id','=','products.id')
                 ->select('best_deals.*','products.product_name','products.product_quantity','products.product_price','products.product_special_price')
                 ->get();
-        return view('backEnd.bestDeals', compact('products','all_flash_products'));
+                
+        $check_last_best_deals = BestDeal::orderBy('id','desc')->limit(6)->get();
+                
+        return view('backEnd.bestDeals', compact('products','all_flash_products','check_last_best_deals'));
     }
 
     /**
@@ -47,10 +50,10 @@ class BestDealController extends Controller
     public function store(Request $request)
     {
 
-        $request['product_id'] = $_POST['product_id'];
-        $request['product_discount'] = $_POST['product_discount'];
-        $request['start_time'] = $_POST['start_time'];
-        $request['end_time']   = $_POST['end_time'];
+        // $request['product_id'] = $_POST['product_id'];
+        // $request['product_discount'] = $_POST['product_discount'];
+        // $request['start_time'] = $_POST['start_time'];
+        // $request['end_time']   = $_POST['end_time'];
 
         $store = $request->all();
 

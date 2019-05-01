@@ -59,68 +59,130 @@
         <div class="row">
 
             <div class="col-lg-4">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
 
-                <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+        
+                                <h5>Category form <small>add category here</small></h5>
+        
+                                <div class="ibox-tools">
+        
+                                    <a class="collapse-link">
+        
+                                        <i class="fa fa-chevron-up"></i>
+        
+                                    </a>
+        
+                                    <a class="close-link">
+        
+                                        <i class="fa fa-times"></i>
+        
+                                    </a>
+        
+                                </div>
+        
+                            </div>
+        
+                            <div class="ibox-content">
+        
+                                <form role="form" class="form-inline" action="{{route('categories.store')}}" method="post">
+        
+                                    @csrf
+        
+                                    <div class="form-group" style="width: 100%;">
+                                        <input type="text" placeholder="Category" name="name" id="cat_name"
+                                               class="form-control" style="width: 100%">
+                                    </div>
+        
+                                    <div class="form-group m-t" style="width: 100%;">
+                                        <input type="text" placeholder="Category Name In Bangla" name="bn_cat_name" id="bn_cat_name"
+                                               class="form-control" style="width: 100%">
+                                    </div>
+        
+                                    <div class="form-group" style="width: 100%;">
+                                        <select class="form-control m-t" name="post_type" style="width: 100%;">
+                                            <option value="post">Post</option>
+                                            <option value="product">Product</option>
+                                        </select>
+                                    </div>
 
-                    <div class="ibox-title">
-
-                        <h5>Category form <small>add category here</small></h5>
-
-                        <div class="ibox-tools">
-
-                            <a class="collapse-link">
-
-                                <i class="fa fa-chevron-up"></i>
-
-                            </a>
-
-                            <a class="close-link">
-
-                                <i class="fa fa-times"></i>
-
-                            </a>
+                                    <div class="form-group" style="width: 100%;">
+                                        <input type="hidden" name="parent_status"
+                                                class="form-control" style="width: 100%" value="0">
+                                    </div>
+        
+                                    <button class="btn btn-primary mt-1" type="submit">Add</button>
+        
+                                </form>
+        
+                            </div>
 
                         </div>
-
                     </div>
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
 
-                    <div class="ibox-content">
-
-                        <form role="form" class="form-inline" action="{{route('categories.store')}}" method="post">
-
-
-
-                            @csrf
-
-
-
-                            <div class="form-group" style="width: 100%;">
-                                <input type="text" placeholder="Category" name="name" id="exampleInputEmail2"
-                                       class="form-control" style="width: 100%">
+                            <div class="ibox-title">
+        
+                                <h5>Sub-Category form <small>add sub-category here</small></h5>
+        
+                                <div class="ibox-tools">
+        
+                                    <a class="collapse-link">
+        
+                                        <i class="fa fa-chevron-up"></i>
+        
+                                    </a>
+        
+                                    <a class="close-link">
+        
+                                        <i class="fa fa-times"></i>
+        
+                                    </a>
+        
+                                </div>
+        
+                            </div>
+        
+                            <div class="ibox-content">
+        
+                                <form role="form" class="form-inline" action="{{route('categories.store')}}" method="post">        
+                                    @csrf
+                                    <div class="form-group" style="width: 100%;">
+                                        <input type="text" placeholder="Sub-Category" name="name" id="exampleInputEmail2"
+                                               class="form-control" style="width: 100%">
+                                    </div>
+                                    <div class="form-group m-t" style="width: 100%;">
+                                        <input type="text" placeholder="Sub Category Name In Bangla" name="bn_cat_name" id="bn_cat_name"
+                                                class="form-control" style="width: 100%">
+                                    </div>
+                                    <div class="form-group" style="width: 100%;">
+                                        <select class="form-control m-t" name="post_type" style="width: 100%;">
+                                            <option value="post">Post</option>
+                                            <option value="product">Product</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="form-group" style="width: 100%;">
+                                        <select class="form-control m-t m-b" name="parent_status" style="width: 100%;">
+                                            @foreach($parentLists as $parentlist)
+                                            <option value="{{$parentlist->id}}">{{$parentlist->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+        
+                                    <button class="btn btn-primary mt-1" type="submit">Add</button>
+        
+                                </form>
+        
                             </div>
 
-                            <div class="form-group" style="width: 100%;">
-                                <select class="form-control m-t" name="post_type" style="width: 100%;">
-                                    <option value="post">Post</option>
-                                    <option value="product">Product</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group" style="width: 100%;">
-                                <select class="form-control m-t m-b" name="parent_status" style="width: 100%;">
-                                    <option value="0">Main Category</option>
-                                    @foreach($parentLists as $parentlist)
-                                    <option value="{{$parentlist->id}}">{{$parentlist->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <button class="btn btn-primary mt-1" type="submit">Add</button>
-
-                        </form>
-
+                        </div>
                     </div>
-
                 </div>
 
             </div>
@@ -185,7 +247,19 @@
 
                             <td>{{$category->name}}</td>
 
-                            <td class="parent-status" id="{{$category->parent_status}}">{{$category->parent_status}}</td>
+                            <td class="parent-status" id="{{$category->parent_status}}">
+                                
+                                @php
+                                    if ($category->parent_status == 0){
+                                        echo "Main Category";
+                                    }else{
+                                        $name = get_category_name($category->parent_status);
+                                        echo $name['name'];
+                                    }
+
+                                @endphp
+                                
+                            </td>
 
                             <td>
 
@@ -235,7 +309,10 @@
                                                            class="form-control" style="width: 100%">
                                                 </div>
 
-
+                                                <div class="form-group m-t" style="width: 100%;">
+                                                    <input type="text" placeholder="Category Name In Bangla" name="bn_cat_name" id="bn_cat_name"
+                                                            class="form-control" style="width: 100%" value="{{$category->bn_cat_name}}">
+                                                </div>
                                                 
                                                 <div class="form-group" style="width: 100%;">
                                                     <label for="">Post Type</label>

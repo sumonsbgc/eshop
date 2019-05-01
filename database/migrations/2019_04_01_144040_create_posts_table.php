@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('sub_title');
+            $table->string('bn_post_name')->nullable();
             $table->longText('content');
             $table->string('post_thumbnail');
             $table->string('author_id');

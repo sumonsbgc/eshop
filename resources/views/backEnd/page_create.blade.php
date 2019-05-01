@@ -50,7 +50,10 @@
                                     <label for="title">Post Title</label>
                                     <input type="text" class="form-control" name="title" id="title" value="{{old('title')}}">
                                 </div>
-
+                                <div class="col-lg-12 form-group">
+                                    <label for="bn_post_name">Post Title In Bangla</label>
+                                    <input type="text" class="form-control" name="bn_post_name" id="bn_post_name" value="{{old('bn_post_name')}}">
+                                </div>                                
                                 <div class="col-lg-12 form-group">
                                     <label for="sub_title">Sub Title</label>
                                     <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{old('sub_title')}}">
@@ -76,10 +79,10 @@
                                 </div> --}}
 
                                 <div class="col-sm-6 form-group">
-                                    <label for="post_category">Parent Post</label>
-                                    <select class="form-control" name="post_category" style="width: 100%;">
+                                    <label for="parent_post">Parent Post</label>
+                                    <select class="form-control" name="parent_post" style="width: 100%;">
                                         @foreach($category as $cate)
-                                        <option value="{{old('post_category', $cate->name)}}">{{$cate->name}}</option>
+                                            <option value="{{old('parent_post', $cate->name)}}">{{$cate->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

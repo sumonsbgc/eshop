@@ -22,7 +22,7 @@ class ProductController extends Controller
 
         $all = DB::table('products')
             ->join('categories','products.product_category','=','categories.id')
-            ->join('brands','products.product_brand','=','brands.id')
+            ->leftjoin('brands','products.product_brand','=','brands.id')
             ->select('products.*','categories.name AS cat_name','brands.name AS brand_name')->get();
 
 
@@ -66,6 +66,8 @@ class ProductController extends Controller
         ]);
 
         $all = $request->all();
+        
+    
 
         $sizes = $request['product_size'];
 
@@ -114,6 +116,20 @@ class ProductController extends Controller
         Product::create($all);
 
         return redirect('admin/product');
+    }
+    
+    
+    public function soldProduct(){
+
+        $all = DB::table('orders')
+            ->join('products','orders.product_id','=','products.id')
+            ->select('orders.*','products.product_name')
+            ->where('orders.status','=','1')
+            ->orderBy('orders.updated_at','desc')
+            ->get();
+
+        return view('backEnd.soldProduct',compact('all'));
+
     }
 
 

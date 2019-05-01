@@ -19,14 +19,19 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','username', 'email', 'password','phone','birthday_date','gender','region','city','area','address'
+        'name','username', 'email', 'password','phone','birthday_date','gender','region','city','state','address'
     ];
+
+    public function review(){
+        $this->hasMany('App\Review');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
+    
     protected $hidden = [
         'password', 'remember_token',
     ];
